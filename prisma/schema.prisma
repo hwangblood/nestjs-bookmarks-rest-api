@@ -11,20 +11,31 @@ datasource db {
 }
 
 model User {
-  id           Int      @id @default(autoincrement())
-  email        String   @unique
-  hashPassword String
-  firstName    String?
-  lastName     String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id        Int        @id @default(autoincrement())
+  email     String     @unique
+  hash      String
+  firstName String?
+  lastName  String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  bookmarks Bookmark[]
+
+  // Customize the table name in database
+  @@map("users")
 }
 
 model Bookmark {
-  id          Int      @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   title       String
   description String?
   link        String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+
+  // Use the userId field as the foreign key to the id field in the User table
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("bookmarks")
 }
