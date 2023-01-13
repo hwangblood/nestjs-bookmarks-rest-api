@@ -13,7 +13,6 @@ export class AuthController {
   @Post('login')
   login(@Body() dto: AuthDto) {
     console.log(dto);
-
     return this.authService.login();
   }
 
@@ -22,7 +21,7 @@ export class AuthController {
    * @returns
    */
   @Post('signup')
-  signup(@Body() dto: any) {
+  signup(@Body() dto: AuthDto) {
     console.log(dto);
     return this.authService.signup();
   }
