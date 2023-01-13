@@ -1,10 +1,6 @@
-# NestJS REST API Tutorial
+# NestJS Bookmarks REST API
 
-Learn [Nest.js](https://nestjs.com/) by building a CRUD REST API with end-to-end tests using modern web development techniques.
-
-## Description
-
-build a bookmarks API from scratch using nestJs, docker, postgres, passport js, prisma, pactum and dotenv.
+Build a bookmarks REST API from scratch using Nest.js, Docker, PostgreSQL, Passport.js, Prisma, PactumJS and Dotenv.
 
 ## Installation
 
