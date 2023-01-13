@@ -1,8 +1,13 @@
 {
-  "name": "nestjs-rest-api-tutorial",
+  "name": "nestjs-bookmarks-rest-api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "A bookmarks REST API from scratch using Nest.js, Docker, PostgreSQL, Passport.js, Prisma, PactumJS and Dotenv.",
+  "author": "https://github.com/heyblood",
+  "homepage": "https://github.com/heyblood/nestjs-bookmarks-rest-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heyblood/nestjs-bookmarks-rest-api"
+  },
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
