@@ -1,4 +1,5 @@
 version: '3.8'
+
 services:
   db:
     container_name: bookmarks-db
@@ -10,4 +11,8 @@ services:
       POSTGRES_PASSWORD: ySB9nz6bdx9hNj
       POSTGRES_DB: postgres
     volumes:
-      - ./volumes/db/data:/var/lib/postgresql/data
+      # - ./volumes/db/data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:

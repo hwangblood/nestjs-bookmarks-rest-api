@@ -11,6 +11,11 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "prisma:deploy": "yarn run prisma migrate deploy",
+    "prisma:reset": "yarn run prisma migrate reset",
+    "db:dev:rm": "docker compose down -v",
+    "db:dev:up": "docker compose up -d --remove-orphans",
+    "db:dev:restart": "yarn run db:dev:rm && yarn run db:dev:up && yarn run prisma:deploy",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
