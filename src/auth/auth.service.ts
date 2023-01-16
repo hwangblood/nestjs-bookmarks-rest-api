@@ -9,8 +9,27 @@ import { AuthDto } from './dto/auth.dto';
 export class AuthService {
   constructor(private readonly prisma: PrismaService) {}
 
-  login(): { message: string } {
-    return { message: 'login a user' };
+  async signin(dto: AuthDto) {
+    // find the user by email
+    const user = await this.prisma.user.findUnique({
+      where: {
+        email: dto.email,
+      },
+    });
+    // if user does not exist throw exception
+    if (!user)
+      throw new ForbiddenException('Credentials incorrect, user not exist.');
+
+    // compare password
+    const pwMatches = await argon2.verify(user.hash, dto.password);
+    // if password incorrect throw exception
+    if (!pwMatches)
+      throw new ForbiddenException('Credentials incorrect, password incorrect');
+
+    // send back the user
+    delete user.hash;
+    return user;
+    // return this.signToken(user.id, user.email);
   }
   async signup(dto: AuthDto) {
     // generate the password hash
@@ -34,7 +53,7 @@ export class AuthService {
         // https://www.prisma.io/docs/reference/api-reference/error-reference#p2002
         if (error.code === 'P2002') {
           throw new ForbiddenException(
-            'There is a unique constraint violation, a new user cannot be created with this email',
+            'Credentials taken, there is a unique constraint violation, a new user cannot be created with this email',
           );
         }
       }
