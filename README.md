@@ -5,14 +5,12 @@ Build a bookmarks REST API from scratch using Nest.js, Docker, PostgreSQL, Passp
 ## Installation
 
 ```bash
-# run postgres database
-$ docker-compose up -d
-
 # install app dependencies
 $ yarn install
 
-# generate prisma models in database
-$ yarn prisma generate
+# setup postgres database with prisma
+$ yarn run db:dev:restart
+
 ```
 
 ## Running the app
@@ -43,8 +41,10 @@ $ yarn run test:cov
 
 ## Resources
 
-- [NestJS - A progressive Node.js framework](https://nestjs.com/)
+- [How to improve user password security with Argon2? - Boldare](https://www.boldare.com/blog/how-to-improve-user-password-security-with-argon2/)
 
-## Reference
+## References
 
 - [Representational state transfer - Wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer)
+- [NestJS - A progressive Node.js framework](https://nestjs.com/)
+- [Prisma | Next-generation ORM for Node.js & TypeScript](https://www.prisma.io/)
