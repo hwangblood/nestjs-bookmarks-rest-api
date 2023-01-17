@@ -29,7 +29,6 @@ export class AuthService {
     // send back the user
     delete user.hash;
     return user;
-    // return this.signToken(user.id, user.email);
   }
   async signup(dto: AuthDto) {
     // generate the password hash
