@@ -10,7 +10,6 @@ $ yarn install
 
 # setup postgres database with prisma
 $ yarn run db:dev:restart
-
 ```
 
 ## Running the app
@@ -42,9 +41,11 @@ $ yarn run test:cov
 ## Resources
 
 - [How to improve user password security with Argon2? - Boldare](https://www.boldare.com/blog/how-to-improve-user-password-security-with-argon2/)
+- [JSON Web Tokens - jwt.io](https://jwt.io/)
 
 ## References
 
 - [Representational state transfer - Wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer)
 - [NestJS - A progressive Node.js framework](https://nestjs.com/)
 - [Prisma | Next-generation ORM for Node.js & TypeScript](https://www.prisma.io/)
+- [Password.js](https://www.passportjs.org/)
