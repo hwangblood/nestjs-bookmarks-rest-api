@@ -6,7 +6,6 @@ export class SingupDto {
   @IsNotEmpty()
   firstName: string;
 
-  @IsString()
   lastName: string;
 
   @IsEmail()
